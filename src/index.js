@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter,Route,Routes} from 'react-router-dom';
-import { BrowserRouter,Route,Routes } from 'react-router-dom';
-
+import{BrowserRouter,Route,Routes}from'react-router-dom';
 function Home(){
   return(
     <div>
@@ -46,9 +44,12 @@ function App(){
         <li><a href='/contact'>contact</a></li>
 
       </ul>
-      <Route path='/'><Home></Home></Route>        
-      <Route path='/topics'><Topics></Topics></Route>
-      <Route path='/contact'><Contact></Contact></Route>
+      <Routes>
+        <Route path='/' element={<Home/>}></Route>        
+        <Route path='/topics' element={<Topics/>}></Route>
+        <Route path='/contact' element={<Contact/>}></Route>
+        <Route path='/*' element={'Not Found'}></Route>
+      </Routes>
     </div>
   );
 }
