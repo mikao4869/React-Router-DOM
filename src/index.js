@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import{BrowserRouter,Route,Routes}from'react-router-dom';
+import{BrowserRouter,Route,Routes,NavLink}from'react-router-dom';
 function Home(){
   return(
     <div>
@@ -39,16 +39,16 @@ function App(){
     <div>
       <div>Hello React Router Dom</div>
       <ul>
-        <li><a href='/'>Home</a></li>
-        <li><a href='/topics'>topics</a></li>
-        <li><a href='/contact'>contact</a></li>
-
+        <li><NavLink to='/'>Home</NavLink></li>
+        <li><NavLink to='/topics'>topics</NavLink></li>
+        <li><NavLink to='/contact'>contact</NavLink></li>
       </ul>
+
       <Routes>
-        <Route path='/' element={<Home/>}></Route>        
-        <Route path='/topics' element={<Topics/>}></Route>
-        <Route path='/contact' element={<Contact/>}></Route>
-        <Route path='/*' element={'Not Found'}></Route>
+        <Route path='/' element={<Home/>} />        
+        <Route path='/topics' element={<Topics/>}/>
+        <Route path='/contact' element={<Contact/>}/>
+        <Route path='/*' element={'Not Found'}/>
       </Routes>
     </div>
   );
